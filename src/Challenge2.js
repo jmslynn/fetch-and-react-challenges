@@ -20,6 +20,9 @@ import React, { useState } from 'react'
 const fetchUserById = async (id) => {
     // TODO: fetch the user with the passed in id and return the user objet
     // The endpoint for users is: "/api/users"
+    const response = await fetch('/api/users/'+ id)
+    const data = await response.json();
+    return data.user;
 }
 
 export default function Challenge2() {
@@ -28,7 +31,9 @@ export default function Challenge2() {
     const onFetchUser3Click = async () => {
         // TODO: Call the fetchUserById function to get the user with the id 3
         // Set the user piece of state to be the fetched user
+        user = await fetchUserById(0);
     }
+
 
     const onFetchUser0Click = async () => {
         // TODO: Call the fetchUserById function to get the user with the id 0
