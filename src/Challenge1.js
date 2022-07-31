@@ -18,6 +18,9 @@ const fetchPost = async (id) => {
     // Hint: You'll need to make a request,
     // parse the data from the response,
     // and access the post from the data
+    const response = await fetch('/api/posts/'+ id)
+    const data = await response.json();
+    return data.post;
 }
 
 /**** DON'T CHANGE ANYTHING BELOW ****/
